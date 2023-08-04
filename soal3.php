@@ -22,16 +22,22 @@
         $numbers = [18, 45, 29, 61, 47, 34];
         echo "array numbers: ";
         print_r($numbers);
-        // Lakukan Looping di sini
 
-        // output nya nanti seperti ini --> [3, 0, 4, 1, 2, 4]
 
-        echo "<br>";
-        // tampilkan di sini
-        echo "Array sisa baginya adalah:  "; 
-        echo "<br>";
+// Lakukan Looping di sini
+$rest = [];
+foreach ($numbers as $number) {
+    $modulo = $number % 5;
+    $rest[] = $modulo;
+}
+
+// output nya nanti seperti ini --> [3, 0, 4, 1, 2, 4]
+echo "<br>";
+// tampilkan di sini
+echo "Array sisa baginya adalah: " . json_encode($rest);
 
         echo "<h3> Soal No 3 Looping Asociative Array </h3>";
+        
         /* 
             Soal No 8
             Loop Associative Array
@@ -54,7 +60,18 @@
             ['004', 'Mouse Jerry', 30000, 'Mouse yang disukai kucing', 'jerry.jpeg']
         ];
         
-        // Output: 
+        // Output:
+        foreach ($items as $item) {
+            $itemData = [
+                'id' => $item[0],
+                'name' => $item[1],
+                'price' => $item[2],
+                'description' => $item[3],
+                'source' => $item[4],
+            ];
+            print_r($itemData);
+            echo "<br>";
+        } 
 
     ?>
 
